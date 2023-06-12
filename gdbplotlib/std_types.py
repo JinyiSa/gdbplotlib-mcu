@@ -144,7 +144,8 @@ class Integral(ScalarTypeHandler):
     def can_handle(gdb_type: gdb.Type) -> bool:
         return str(gdb_type) in (
             "char", "short", "int", "long", "long long",
-            "unsigned char", "unsigned short", "unsigned int", "unsigned long", "unsigned long long"
+            "unsigned char", "unsigned short", "unsigned int", "unsigned long", "unsigned long long",
+            "short unsigned int", "long unsigned int", "long long unsigned int"
         )
 
     def shape(self, gdb_value: gdb.Value) -> Tuple[Optional[int], ...]:
